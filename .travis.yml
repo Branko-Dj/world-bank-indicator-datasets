@@ -1,15 +1,21 @@
+sudo: false
 os: trusty
 
 language: node_js
 node_js:
 - '8'
 
-python:
-  - 3.6
+addons:
+  apt:
+    packages:
+      - "python3"
+      - "python3-pip"
+      
+before_install:
+- "pip3 install -r docs/requirements.txt"
 
 install:
 - npm install -g data-cli
-- pip install bs4
 
 script: python3 scripts/extractLinks.py
 env:
