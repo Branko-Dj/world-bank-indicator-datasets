@@ -1,0 +1,15 @@
+os: trusty
+
+language: node_js
+node_js:
+- '8'
+python:
+  - 3.6
+install:
+- npm install -g data-cli
+- pip install bs4
+script: python scripts/extractLinks.py
+env:
+  global:
+    username: examples
+  TRAVIS_SECURE_ENV_VARS: true
