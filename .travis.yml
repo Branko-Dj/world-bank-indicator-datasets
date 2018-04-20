@@ -13,8 +13,8 @@ before_install:
   - python3 -V
   - pip3 -V
 install:
-- npm install -g data-cli
-- pip3 install bs4
+- sudo npm install -g data-cli
+- sudo pip3 install bs4
 script: python3 scripts/extractLinks.py
 env:
   global:
